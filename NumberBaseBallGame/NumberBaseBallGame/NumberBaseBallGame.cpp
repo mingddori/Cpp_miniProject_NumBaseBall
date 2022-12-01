@@ -51,7 +51,7 @@ void startScene() {
     std::cout << "  |                                                                                                   |" << std::endl;
     std::cout << "  |                                                                        made by. Lee MinSeop       |" << std::endl;
     std::cout << "  |___________________________________________________________________________________________________|" << std::endl;
-
+    std::cout << "dddd";
       
 
     
