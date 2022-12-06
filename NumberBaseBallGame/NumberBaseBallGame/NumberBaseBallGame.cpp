@@ -1,5 +1,7 @@
 ﻿#include "NumberBaseBallGame.h"
-
+#include "MainMenu.h"
+#include "EnumClass.h"
+#include "ConsoleSetting.h"
 
 int main()
 {
@@ -10,9 +12,11 @@ int main()
 	startScene();
 
 	// 커서 움직이기
-	menuMoveCouser();
+	int last_y = menuMoveCouser();
 	
 	// 메뉴 선택하기
+	
+
 
 	// 메뉴 클리어
 	clearConsole();
@@ -21,9 +25,7 @@ int main()
 
 }
 
-void gameSetInit() {
-	system("mode con cols=105 lines=42 | title 숫자야구게임");
-}
+
 
 void startScene() {
 	std::cout << std::endl;
@@ -148,7 +150,7 @@ int menuMoveCouser() {
 			}
 		} // case DOWN
 		case SUBMIT: {
-			return y - 12;
+			return y;
 		}
 		} // switch
 	}
@@ -156,4 +158,11 @@ int menuMoveCouser() {
 
 void clearConsole() {
 	system("cls");
+}
+
+int selectMenu(int last_y) {
+
+	if()
+
+	return 0;
 }
