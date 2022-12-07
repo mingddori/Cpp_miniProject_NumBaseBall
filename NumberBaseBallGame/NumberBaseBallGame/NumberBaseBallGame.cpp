@@ -5,6 +5,7 @@
 
 int main()
 {
+	/*
 	// 게임 타이틀 정하기
 	gameSetInit();
 
@@ -15,14 +16,16 @@ int main()
 	int last_y = menuMoveCouser();
 	
 	// 메뉴 선택하기
-	
+	clearConsole();
 
 
 	// 메뉴 클리어
-	clearConsole();
+	std::cout << selectMenu(last_y);
+	*/
+	//startSceneRoutine();
 
 	getchar();
-
+	
 }
 
 
@@ -64,6 +67,10 @@ void startScene() {
 	std::cout << "  |                                                                                                   |" << std::endl;
 	std::cout << "  |                                                                          made by. Lee MinSeop     |" << std::endl;
 	std::cout << "  |___________________________________________________________________________________________________|" << std::endl;
+	std::cout << std::endl;
+	std::cout << "     UP KEY    : UP       ||   Down_key : Down" << std::endl;
+	std::cout << "     SPACE BAR : Select   ||   " << std::endl;
+
 }
 
 void gotoxy(int x, int y) {
@@ -75,9 +82,8 @@ void gotoxy(int x, int y) {
 }
 
 int keyControl() {
-	char temp = _getch();
-
-	switch (temp) {
+	
+	switch (_getch()) {
 	case LEFT:
 		return LEFT;
 		break;
@@ -107,11 +113,8 @@ int menuMoveCouser() {
 
 	// 메뉴 선택 로직
 	while (1) {
-		// 키 입력
-		int key_tmp = keyControl();
-		
 		// 키 분류
-		switch (key_tmp) {
+		switch (keyControl()) {
 		case UP: {
 			if (y > 23) {
 				gotoxy(x, y);
@@ -162,7 +165,51 @@ void clearConsole() {
 
 int selectMenu(int last_y) {
 
-	if()
+	switch (last_y) {
+	case (int)Menu_Number::NO_1: { return 1; }
+	case (int)Menu_Number::NO_2: {	return 2; }
+	case (int)Menu_Number::NO_3: { return 3; }
+	case (int)Menu_Number::NO_4: { exitGame();  return 4; }
+	}
+}
 
-	return 0;
+void startSceneRoutine() {
+	while (1) {
+		startScene();
+		int last_y = menuMoveCouser();
+		clearConsole();
+		int _selected_menu = selectMenu(last_y);
+		switch (_selected_menu) {
+		case 1 :
+			break;
+		case 2 :
+			break;
+		case 3 :
+			break;
+		case 4 :
+			exitGame();
+			break;
+		}
+	}
+	getchar();
+
+}
+
+void exitGame() {
+	clearConsole();
+	std::cout << ">> 게임을 종료하겠습니까? ( Y / N )  :  ";
+	std::string answer_quit;
+	std::cin >> answer_quit;
+	std::cout << std::endl;
+	
+	if (answer_quit == "Y" || answer_quit == "y") {
+		exit(0);
+	}
+	else if (answer_quit == "N" || answer_quit == "n") {
+		exit(0);
+	}
+	else {
+		//continue;
+	}
+
 }

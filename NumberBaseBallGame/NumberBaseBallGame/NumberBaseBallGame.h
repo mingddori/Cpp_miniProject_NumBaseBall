@@ -8,6 +8,9 @@ void gotoxy(int, int);
 int keyControl();
 int menuMoveCouser();
 void clearConsole();
+int selectMenu(int);
+void startSceneRoutine();
+void exitGame();
 
 
 #endif

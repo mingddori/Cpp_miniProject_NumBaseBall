@@ -10,10 +10,10 @@
 #define SUBMIT 0
 
 enum class Menu_Number {
-	MENU_NO_1 = 23,
-	MENU_NO_2 = 25,
-	MENU_NO_3 = 27,
-	MENU_NO_4 = 29
+	NO_1 = 23,
+	NO_2 = 25,
+	NO_3 = 27,
+	NO_4 = 29
 };
 
 
